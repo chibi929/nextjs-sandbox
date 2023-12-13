@@ -1,0 +1,20 @@
+{
+  "generalConfiguration": {
+    "sortOnBeforeSave": true,
+    "exclude": ["gql.d.ts"]
+  },
+  "importStringConfiguration": {
+    "hasSemicolon": false,
+    "trailingComma": "multiLine",
+    "tabSize": 2,
+    "maximumNumberOfImportExpressionsPerLine": {
+      "type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne"
+    }
+  },
+  "sortConfiguration": {
+    "removeUnusedImports": true,
+    "customOrderingRules": {
+      "defaultNumberOfEmptyLinesAfterGroup": 1
+    }
+  }
+}
