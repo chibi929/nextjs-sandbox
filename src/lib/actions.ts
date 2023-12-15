@@ -79,8 +79,8 @@ export async function createInvoice(prevState: State, formData: FormData): Promi
     }
   }
 
-  revalidatePath('/dashboard/invoices')
-  redirect('/dashboard/invoices')
+  revalidatePath('/learn/dashboard/invoices')
+  redirect('/learn/dashboard/invoices')
 }
 
 export async function updateInvoice(id: string, prevState: State, formData: FormData): Promise<State> {
@@ -110,8 +110,8 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
     return { message: 'Database Error: Failed to Update Invoice.' }
   }
 
-  revalidatePath('/dashboard/invoices')
-  redirect('/dashboard/invoices')
+  revalidatePath('/learn/dashboard/invoices')
+  redirect('/learn/dashboard/invoices')
 }
 
 export async function deleteInvoice(id: string, formData: FormData) {
@@ -123,7 +123,7 @@ export async function deleteInvoice(id: string, formData: FormData) {
     DELETE FROM invoices
     WHERE id = ${id}
   `
-    revalidatePath('/dashboard/invoices')
+    revalidatePath('/learn/dashboard/invoices')
     return { message: 'Deleted Invoice' }
   } catch (error) {
     return { message: 'Database Error: Failed to Delete Invoice.' }
