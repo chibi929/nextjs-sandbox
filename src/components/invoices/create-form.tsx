@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { useFormState } from 'react-dom'
 
-import { createInvoice } from '@/app/lib/actions'
-import { CustomerField } from '@/app/lib/definitions'
 import { Button } from '@/components/button'
+import { createInvoice } from '@/lib/actions'
+import { CustomerField } from '@/lib/definitions'
 import { CheckIcon, ClockIcon, CurrencyDollarIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 
 export default function Form({ customers }: { customers: CustomerField[] }) {

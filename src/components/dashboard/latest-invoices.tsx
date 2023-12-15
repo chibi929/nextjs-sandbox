@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 
-import { fetchLatestInvoices } from '@/app/lib/data'
 import { lusitana } from '@/configs/fonts'
+import { fetchLatestInvoices } from '@/lib/data'
 import { ArrowPathIcon } from '@heroicons/react/24/outline'
 
 export default async function LatestInvoices() {

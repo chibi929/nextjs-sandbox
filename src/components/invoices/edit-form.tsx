@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { useFormState } from 'react-dom'
 
-import { updateInvoice } from '@/app/lib/actions'
-import { CustomerField, InvoiceForm } from '@/app/lib/definitions'
 import { Button } from '@/components/button'
+import { updateInvoice } from '@/lib/actions'
+import { CustomerField, InvoiceForm } from '@/lib/definitions'
 import { CheckIcon, ClockIcon, CurrencyDollarIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 
 export default function EditInvoiceForm({ invoice, customers }: { invoice: InvoiceForm; customers: CustomerField[] }) {

@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data'
 import Breadcrumbs from '@/components/invoices/breadcrumbs'
 import Form from '@/components/invoices/edit-form'
+import { fetchCustomers, fetchInvoiceById } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: '請求書の編集',
