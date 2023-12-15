@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 import { fetchFilteredInvoices } from '@/app/lib/data'
 import { formatCurrency, formatDateToLocal } from '@/app/lib/utils'
-import { DeleteInvoice, UpdateInvoice } from '@/app/ui/invoices/buttons'
-import InvoiceStatus from '@/app/ui/invoices/status'
+import { DeleteInvoice, UpdateInvoice } from '@/components/invoices/buttons'
+import InvoiceStatus from '@/components/invoices/status'
 
 export default async function InvoicesTable({ query, currentPage }: { query: string; currentPage: number }) {
   const invoices = await fetchFilteredInvoices(query, currentPage)

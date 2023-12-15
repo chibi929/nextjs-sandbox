@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import { Suspense } from 'react'
 
 import { fetchInvoicesPages } from '@/app/lib/data'
-import { CreateInvoice } from '@/app/ui/invoices/buttons'
-import Pagination from '@/app/ui/invoices/pagination'
-import Table from '@/app/ui/invoices/table'
-import Search from '@/app/ui/search'
-import { InvoicesTableSkeleton } from '@/app/ui/skeletons'
+import { CreateInvoice } from '@/components/invoices/buttons'
+import Pagination from '@/components/invoices/pagination'
+import Table from '@/components/invoices/table'
+import Search from '@/components/search'
+import { InvoicesTableSkeleton } from '@/components/skeletons'
 import { lusitana } from '@/configs/fonts'
 
 export const metadata: Metadata = {

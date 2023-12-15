@@ -1,12 +1,11 @@
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 
-import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/app/ui/skeletons'
+import CardWrapper from '@/components/dashboard/cards'
+import LatestInvoices from '@/components/dashboard/latest-invoices'
+import RevenueChart from '@/components/dashboard/revenue-chart'
+import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/components/skeletons'
 import { lusitana } from '@/configs/fonts'
-
-import CardWrapper from '../../ui/dashboard/cards'
-import LatestInvoices from '../../ui/dashboard/latest-invoices'
-import RevenueChart from '../../ui/dashboard/revenue-chart'
 
 export const metadata: Metadata = {
   title: 'Dashboard',

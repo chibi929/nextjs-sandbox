@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import AcmeLogo from '@/app/ui/acme-logo'
+import AcmeLogo from '@/components/acme-logo'
 import { lusitana } from '@/configs/fonts'
 import styles from '@/styles/home.module.css'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
