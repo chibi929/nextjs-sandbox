@@ -3,8 +3,8 @@ import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import { z } from 'zod'
 
-import { authConfig } from './auth.config'
-import { getUser } from './lib/data'
+import { authConfig } from '../configs/auth.config'
+import { getUser } from './data'
 
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
