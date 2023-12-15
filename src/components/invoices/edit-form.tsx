@@ -5,7 +5,7 @@ import { useFormState } from 'react-dom'
 
 import { Button } from '@/components/button'
 import { updateInvoice } from '@/lib/actions'
-import { CustomerField, InvoiceForm } from '@/lib/definitions'
+import { CustomerField, InvoiceForm } from '@/types/definitions'
 import { CheckIcon, ClockIcon, CurrencyDollarIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 
 export default function EditInvoiceForm({ invoice, customers }: { invoice: InvoiceForm; customers: CustomerField[] }) {

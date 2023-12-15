@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import Search from '@/components/search'
 import { lusitana } from '@/configs/fonts'
-import { CustomersTable, FormattedCustomersTable } from '@/lib/definitions'
+import { CustomersTable, FormattedCustomersTable } from '@/types/definitions'
 
 export default async function CustomersTable({ customers }: { customers: FormattedCustomersTable[] }) {
   return (
