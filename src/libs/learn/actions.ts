@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { z } from 'zod'
 
-import { signIn } from '@/lib/auth'
+import { signIn } from '@/libs/learn/auth'
 import { sql } from '@vercel/postgres'
 
 const FormSchema = z.object({

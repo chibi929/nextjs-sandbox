@@ -7,7 +7,7 @@ import Table from '@/components/invoices/table'
 import Search from '@/components/search'
 import { InvoicesTableSkeleton } from '@/components/skeletons'
 import { lusitana } from '@/configs/fonts'
-import { fetchInvoicesPages } from '@/lib/data'
+import { fetchInvoicesPages } from '@/libs/learn/data'
 
 export const metadata: Metadata = {
   title: 'Invoices',

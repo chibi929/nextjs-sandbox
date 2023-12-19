@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 import Breadcrumbs from '@/components/invoices/breadcrumbs'
 import Form from '@/components/invoices/create-form'
-import { fetchCustomers } from '@/lib/data'
+import { fetchCustomers } from '@/libs/learn/data'
 
 export const metadata: Metadata = {
   title: '請求書の作成',

@@ -1,7 +1,5 @@
 import { unstable_noStore as noStore } from 'next/cache'
 
-import { sql } from '@vercel/postgres'
-
 import {
   CustomerField,
   CustomersTable,
@@ -10,7 +8,9 @@ import {
   LatestInvoiceRaw,
   Revenue,
   User,
-} from '../types/definitions'
+} from '@/types/definitions'
+import { sql } from '@vercel/postgres'
+
 import { formatCurrency } from './utils'
 
 export async function fetchRevenue() {

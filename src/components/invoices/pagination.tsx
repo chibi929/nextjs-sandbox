@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-import { generatePagination } from '@/lib/utils'
+import { generatePagination } from '@/libs/learn/utils'
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 
 export default function Pagination({ totalPages }: { totalPages: number }) {

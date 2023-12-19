@@ -1,5 +1,5 @@
 import { lusitana } from '@/configs/fonts'
-import { fetchCardData } from '@/lib/data'
+import { fetchCardData } from '@/libs/learn/data'
 import { BanknotesIcon, ClockIcon, InboxIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 
 const iconMap = {

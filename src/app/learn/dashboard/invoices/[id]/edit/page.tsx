@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 
 import Breadcrumbs from '@/components/invoices/breadcrumbs'
 import Form from '@/components/invoices/edit-form'
-import { fetchCustomers, fetchInvoiceById } from '@/lib/data'
+import { fetchCustomers, fetchInvoiceById } from '@/libs/learn/data'
 
 export const metadata: Metadata = {
   title: '請求書の編集',

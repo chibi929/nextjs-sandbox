@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useFormState } from 'react-dom'
 
 import { Button } from '@/components/button'
-import { updateInvoice } from '@/lib/actions'
+import { updateInvoice } from '@/libs/learn/actions'
 import { CustomerField, InvoiceForm } from '@/types/definitions'
 import { CheckIcon, ClockIcon, CurrencyDollarIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 
