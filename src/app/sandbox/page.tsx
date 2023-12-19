@@ -5,7 +5,7 @@ import { Button, Card, CardBody, CardHeader } from '@nextui-org/react'
 
 const Page: NextPage = () => {
   return (
-    <main className="container mx-auto px-4">
+    <main className="flex flex-wrap gap-4">
       <div className="flex flex-wrap gap-4 items-center">
         <Card>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">

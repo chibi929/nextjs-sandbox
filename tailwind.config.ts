@@ -33,6 +33,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [nextui(), require('@tailwindcss/forms')],
+  plugins: [
+    nextui({
+      layout: {
+        radius: {
+          small: '2px',
+          medium: '4px',
+          large: '8px',
+        },
+      },
+    }),
+  ],
 }
 export default config
