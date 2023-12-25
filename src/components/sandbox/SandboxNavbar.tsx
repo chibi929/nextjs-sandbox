@@ -1,8 +1,9 @@
 'use client'
 
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/react'
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/react'
 
 type Props = {}
 
