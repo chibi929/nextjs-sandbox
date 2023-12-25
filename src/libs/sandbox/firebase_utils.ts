@@ -1,5 +1,5 @@
 import { Unsubscribe } from 'firebase/app-check'
-import { Database, onChildAdded, push, ref, remove } from 'firebase/database'
+import { Database, onChildAdded, onChildRemoved, push, ref, remove } from 'firebase/database'
 
 export interface ISandboxData {
   key: string
@@ -21,12 +21,22 @@ export class FirebaseUtil {
     return await remove(sandboxRef)
   }
 
-  addSandboxListener(callback: (data: ISandboxData) => void): Unsubscribe {
+  addSandboxListener(
+    addedCallback: (data: ISandboxData) => void,
+    removedCallback: (data: ISandboxData) => void
+  ): Unsubscribe[] {
     const sandboxRef = ref(this.db, `${this.PREFIX}`)
-    return onChildAdded(sandboxRef, (snapshot) => {
-      console.log('onChildAdded')
-      const data = snapshot.val()
-      callback({ key: snapshot.key || '', text: data })
-    })
+    return [
+      onChildAdded(sandboxRef, (snapshot) => {
+        console.log('onChildAdded')
+        const data = snapshot.val()
+        addedCallback({ key: snapshot.key || '', text: data })
+      }),
+      onChildRemoved(sandboxRef, (snapshot) => {
+        console.log('onChildRemoved:')
+        const data = snapshot.val()
+        removedCallback({ key: snapshot.key || '', text: data })
+      }),
+    ]
   }
 }

@@ -26,19 +26,23 @@ const SandboxTable: React.FC<Props> = (props) => {
       return
     }
 
-    const unscribe = firebaseUtil.addSandboxListener(({ key, text }) => {
-      setRows((prevValue) => [...prevValue, { key, text }])
-    })
+    const unscribes = firebaseUtil.addSandboxListener(
+      ({ key, text }) => {
+        setRows((prevValue) => [...prevValue, { key, text }])
+      },
+      ({ key }) => {
+        setRows((prevValue) => prevValue.filter((value) => value.key !== key))
+      }
+    )
 
     return () => {
-      unscribe()
+      unscribes.forEach((unscribe) => unscribe())
     }
   }, [firebaseUtil])
 
   const eventHandlers = {
     doDelete: async (key: string) => {
       await firebaseUtil?.deleteSandboxData(key)
-      setRows((prevValue) => prevValue.filter((value) => value.key !== key))
     },
   }
   return (
