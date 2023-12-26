@@ -11,9 +11,10 @@ export class FirebaseUtil {
 
   constructor(private readonly db: Database) {}
 
-  sandboxPush(value: string): void {
+  async sandboxPush(value: string): Promise<void> {
+    console.log('sandboxPush:', value)
     const sandboxRef = ref(this.db, this.PREFIX)
-    push(sandboxRef, value)
+    await push(sandboxRef, value)
   }
 
   async deleteSandboxData(key: string): Promise<void> {
