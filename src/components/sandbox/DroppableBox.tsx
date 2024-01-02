@@ -8,10 +8,13 @@ import { FirebaseStorageUtil } from '@/libs/sandbox/FirebaseStorageUtil'
 import { TrashIcon } from '@heroicons/react/20/solid'
 import { CloudArrowUpIcon } from '@heroicons/react/24/outline'
 
-type Props = {}
+type Props = {
+  onUploaded?: (src: string) => void
+}
 
 const DroppableBox: React.FC<Props> = (props) => {
   const [fileUrl, setFileUrl] = useState('')
+  const [uploading, setUploading] = useState(false)
   const { firebaseStorage } = useFirebase()
 
   const eventHandlers = {
@@ -30,7 +33,7 @@ const DroppableBox: React.FC<Props> = (props) => {
       evt.stopPropagation()
       handleFiles(evt.dataTransfer.files)
     },
-    text: () => {
+    doDelete: () => {
       setFileUrl('')
     },
   }
@@ -40,9 +43,11 @@ const DroppableBox: React.FC<Props> = (props) => {
       return
     }
 
+    setUploading(true)
     const storageUtil = new FirebaseStorageUtil(firebaseStorage)
-    const imageUrl = await storageUtil.upload(files[0])
-    setFileUrl(imageUrl)
+    const imageUrl = await storageUtil.upload(files[0], `${Date.now()}_${files[0].name}`)
+    setUploading(false)
+    props.onUploaded ? props.onUploaded(imageUrl) : setFileUrl(imageUrl)
   }
 
   return (
@@ -58,7 +63,7 @@ const DroppableBox: React.FC<Props> = (props) => {
           />
           <TrashIcon
             className="absolute bottom-0 right-0 cursor-pointer w-6 text-red-500"
-            onClick={eventHandlers.text}
+            onClick={eventHandlers.doDelete}
           />
         </div>
       ) : (
@@ -70,9 +75,15 @@ const DroppableBox: React.FC<Props> = (props) => {
         >
           <div className="flex flex-col items-center justify-center pt-5 pb-6">
             <CloudArrowUpIcon className="w-8 h-8" />
-            <p className="mb-2 text-sm">
-              <span className="font-semibold">Click to upload</span> or drag and drop
-            </p>
+            {!uploading ? (
+              <p className="mb-2 text-sm">
+                <span className="font-semibold">Click to upload</span> or drag and drop
+              </p>
+            ) : (
+              <p className="mb-2 text-sm">
+                <span className="font-semibold">Uploading...</span>
+              </p>
+            )}
           </div>
           <input id="dropzone-file" type="file" className="hidden" onChange={eventHandlers.handleFileInput} />
         </label>
