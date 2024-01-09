@@ -1,11 +1,11 @@
 import { NextPage } from 'next'
 
-import AframeHalloWorld from '@/components/sandbox/AframeHalloWorld'
+import AframeShinden from '@/components/sandbox/AframeShinden'
 
 const Page: NextPage = () => {
   return (
     <main>
-      <AframeHalloWorld />
+      <AframeShinden />
     </main>
   )
 }
